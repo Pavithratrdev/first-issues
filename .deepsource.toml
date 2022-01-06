@@ -22,3 +22,8 @@ enabled = true
 [[analyzers]]
 name = "secrets"
 enabled = true
+
+test_patterns = [
+  "test/**",
+  "test_*.py"
+]
