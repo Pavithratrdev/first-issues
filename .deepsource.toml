@@ -24,3 +24,8 @@ enabled = true
 name = "secrets"
 enabled = true
 
+test_patterns = [
+    "test/**",
+    "test_*.py"
+  ]
+  
