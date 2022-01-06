@@ -24,6 +24,6 @@ name = "secrets"
 enabled = true
 
 test_patterns = [
-  "tests/**",
+  "test/**",
   "test_*.py"
 ]
