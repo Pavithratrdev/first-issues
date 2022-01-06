@@ -1,4 +1,5 @@
-import os,sys
+import os
+import sys
 relpath = os.path.dirname(__file__) # Find relative path: from current directory to test.py
 abspath = os.path.abspath(".")      # Find absolute path: from / to current directory
 os.chdir(abspath + '/first_timers')
