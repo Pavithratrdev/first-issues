@@ -6,11 +6,11 @@ enabled = true
 
   [analyzers.meta]
   runtime_version = "3.x.x"
-  
   test_patterns = [
     "test/**",
     "test_*.py"
   ]
+  
 
 [[analyzers]]
 name = "javascript"
