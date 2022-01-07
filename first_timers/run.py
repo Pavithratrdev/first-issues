@@ -31,6 +31,7 @@ def updateDB(all_issues, db_path):
         is_flag=True,
         help='Run in debug mode (does not tweet).')
 def run(only_save, db_path, create, creds_path, debug):
+    """Initialize, fetch first-time-issues, tweet fresh ones and update the DB."""
     dbExists = os.path.exists(db_path)
     if not dbExists and not create:
         click.secho('DB file does not exist and argument'
