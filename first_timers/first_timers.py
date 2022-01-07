@@ -2,7 +2,7 @@
 from __future__ import print_function
 import re
 import warnings
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import requests
 import tweepy
