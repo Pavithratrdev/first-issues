@@ -54,7 +54,7 @@ def add_repo_languages(issues):
         if res.status_code == 403:
             warnings.warn('Rate limit reached getting languages')
             return issues
-        elif res.ok:
+        if res.ok:
             issue['languages'] = res.json()
         else:
             warnings.warn('Could not handle response: ' + str(res) + ' from the API.')
