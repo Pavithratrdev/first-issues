@@ -3,7 +3,7 @@ relpath = os.path.dirname(__file__) # Find relative path: from current directory
 abspath = os.path.abspath(".")      # Find absolute path: from / to current directory
 os.chdir(abspath + '/first_timers')
 sys.path.append('./')
-import first_timers as first_timers
+import first_timers
 import json
 
 
