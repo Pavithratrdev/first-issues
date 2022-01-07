@@ -73,7 +73,6 @@ def tweet_issues(issues, creds, debug=False):
     Also takes a parameter 'debug', which can prevent actual tweeting.
     Returns a list of tweets.
     """
-
     if len(issues) == 0:
         return []
 
