@@ -35,7 +35,7 @@ def get_first_timer_issues(days_old=DAYS_OLD):
         if res.status_code == 403:
             warnings.warn('Rate limit reached')
             return items
-        elif res.ok:
+        if res.ok:
             items = res.json()['items']
             for item in items:
                 created_at = datetime.strptime(item['created_at'], "%Y-%m-%dT%H:%M:%SZ")
