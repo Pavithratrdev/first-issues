@@ -63,7 +63,7 @@ def add_repo_languages(issues):
 
 def get_fresh(old_issue_list, new_issue_list):
     """Returns which issues are not present in the old list of issues."""
-    old_urls = set(x['url'] for x in old_issue_list)
+    old_urls = {x['url'] for x in old_issue_list}
     return [x for x in new_issue_list if x['url'] not in old_urls]
 
 
