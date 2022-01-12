@@ -96,7 +96,7 @@ def tweet_issues(issues, creds, debug=False):
         # Not encoding here because Twitter treats code points as 1 character.
         language_hashTags = ''
         title = issue['title']
-        
+
         if len(title) > allowed_title_len:
             title = title[: allowed_title_len - 1] + ellipse
         else:
