@@ -1,5 +1,11 @@
 version = 1
 
+test_patterns = [
+  "tests/**",
+  "test_*.py"
+]
+
+
 [[analyzers]]
 name = "python"
 enabled = true
@@ -23,9 +29,4 @@ enabled = true
 [[analyzers]]
 name = "secrets"
 enabled = true
-
-test_patterns = [
-    "test/**",
-    "test_*.py"
-  ]
   
