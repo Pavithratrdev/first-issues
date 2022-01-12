@@ -14,7 +14,7 @@ ellipse = u'…'
 query_string = 'https://api.github.com/search/issues?\
     q=label:"{}"+is:issue+is:open&sort=updated&order=desc'
 queries = [
-    query_string.format('good-first-issue'),    
+    query_string.format('good-first-issue'), 
     query_string.format('good first issue')
 ]
 
