@@ -6,6 +6,7 @@ import sys
 import json
 import first_timers as FT
 
+
 def updateDB(all_issues, db_path):
     """Truncate and write the new list of issues in the DB."""
     with open(db_path, 'w') as dbFile:
