@@ -11,8 +11,12 @@ DAYS_OLD = 15
 MAX_TWEETS_LEN = 280
 
 ellipse = u'…'
-query_string = 'https://api.github.com/search/issues?q=label:"{}"+is:issue+is:open&sort=updated&order=desc'
-queries = [query_string.format('good-first-issue'), query_string.format('good first issue')]
+query_string = 'https://api.github.com/search/issues?\
+    q=label:"{}"+is:issue+is:open&sort=updated&order=desc'
+queries = [
+    query_string.format('good-first-issue'),    
+    query_string.format('good first issue')
+]
 
 
 def humanize_url(api_url):
@@ -28,7 +32,9 @@ def humanize_url(api_url):
 
 
 def get_first_timer_issues(days_old=DAYS_OLD):
-    """Fetches the first page of issues with the label first-timers-label which are still open."""
+    """Fetches the first page of issues with the label
+    first-timers-label which are still open.
+    """
     items = []
     for query in queries:
         res = requests.get(query)
@@ -42,7 +48,9 @@ def get_first_timer_issues(days_old=DAYS_OLD):
                 if (datetime.now() - created_at).days < days_old:
                     items.append(item)
         else:
-            raise RuntimeError('Could not handle response: ' + str(res) + ' from the API.')
+            raise RuntimeError(
+                'Could not handle response: ' + str(res) + ' from the API.'
+                )
     return items
 
 
@@ -94,15 +102,17 @@ def tweet_issues(issues, creds, debug=False):
 
     for issue in issues:
         # Not encoding here because Twitter treats code points as 1 character.
-        language_hashTags = ''
+        lang_hashTags = ''
         title = issue['title']
 
         if len(title) > allowed_title_len:
             title = title[: allowed_title_len - 1] + ellipse
         else:
             if 'languages' in issue:
-                language_hashTags = ''.join(' #{}'.format(lang) for lang in issue['languages'])
-                hashTags = hashTags + language_hashTags
+                lang_hashTags = ''.join(
+                    ' #{}'.format(lang) for lang in issue['languages']
+                    )
+                hashTags = hashTags + lang_hashTags
 
             max_hashtags_len = MAX_TWEETS_LEN - (url_len + 1) - (len(title) + 1)
 
