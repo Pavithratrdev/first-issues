@@ -100,7 +100,6 @@ def tweet_issues(issues, creds, debug=False):
 
     for issue in issues:
         # Not encoding here because Twitter treats code points as 1 character.
-        lang_hashTags = ''
         title = issue['title']
 
         if len(title) > allowed_title_len:
