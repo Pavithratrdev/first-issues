@@ -10,12 +10,8 @@ DAYS_OLD = 15
 MAX_TWEETS_LEN = 280
 
 ellipse = u'…'
-query_string = 'https://api.github.com/search/issues?\
-    q=label:"{}"+is:issue+is:open&sort=updated&order=desc'
-queries = [
-    query_string.format('good-first-issue'), 
-    query_string.format('good first issue')
-]
+query_string = 'https://api.github.com/search/issues?q=label:"{}"+is:issue+is:open&sort=updated&order=desc'
+queries = [query_string.format('good-first-issue'), query_string.format('good first issue')]
 
 
 def humanize_url(api_url):
