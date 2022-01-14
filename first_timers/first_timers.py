@@ -31,8 +31,8 @@ def humanize_url(api_url):
 
 
 def get_first_timer_issues(days_old=DAYS_OLD):
-    """Fetches the first page of issues with the label
-    first-timers-label which are still open.
+    """Fetches the first page of issues with the label first-timers-label
+    which are still open.
     """
     items = []
     for query in queries:
@@ -107,10 +107,10 @@ def tweet_issues(issues, creds, debug=False):
             title = title[: allowed_title_len - 1] + ellipse
         else:
             if 'languages' in issue:
-                lang_hashTags = ''.join(
+                language_hashTags = ''.join(
                     ' #{}'.format(lang) for lang in issue['languages']
                     )
-                hashTags = hashTags + lang_hashTags
+                hashTags = hashTags + language_hashTags
 
             max_hashtags_len = MAX_TWEETS_LEN - (url_len + 1) - (len(title) + 1)
 
